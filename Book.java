@@ -68,9 +68,9 @@ class Book
      * Set the reference number for this book
      * @param bookRefNumber is the reference number to be set for the book
      */
-    public void setRefNumber(String bookRefNumber)
+    public void setRefNumber(String ref)
     {
-        refNumber = bookRefNumber;
+        refNumber = ref;
     }
     
     /**
