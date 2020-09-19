@@ -13,11 +13,12 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed = 0;
 
     /**
-     * Set the author,title,pages and refNumber fields when this object
-     * is constructed.
-     */
+    * Set the author,title,pages and refNumber fields when this object
+    * is constructed.
+    */
     public Book(String bookAuthor, String bookTitle, int bookPages)
     {
         author = bookAuthor;
@@ -29,45 +30,54 @@ class Book
 
     // Add the methods here ...
     /**
-     * Provide access to the string holding the author's name
-     * @return author returns the contents in author field
-     */
+    * Provide access to the string holding the author's name
+    * @return author returns the author contents in author field
+    */
     public String getAuthor()
     {
         return author;
     }
     
-        /**
-     * Provide access to the string holding the book's title
-     * @return title returns the contents in title field
-     */
+    /**
+    * Provide access to the string holding the book's title
+    * @return title returns the title contents in title field
+    */
     public String getTitle()
     {
         return title;
     }
     
-        /**
-     * Provide access to the int holding the book's pages
-     * @return pages returns the number of pages in pages field
-     */
+    /**
+    * Provide access to the int holding the book's pages
+    * @return pages returns the number of pages in pages field
+    */
     public int getPages()
     {
         return pages;
     }
     
-        /**
-     * Provide access to the string holding the book's refNumber
-     * @return refNumber returns the reference number field
-     */
+    /**
+    * Provide access to the string holding the book's refNumber
+    * @return refNumber returns the book's reference number in the reference number field
+    */
     public String getRefNumber()
     {
         return refNumber;
     }
     
-        /**
-     * Set the reference number for this book
-     * @param bookRefNumber is the reference number to be set for the book
-     */
+    /**
+    * Provide access to the int holding the book's borrowed count
+    * @return borrowed returns the number of times a book has been borrowed in the borrowed field
+    */
+    public int getBorrowed()
+    {
+        return borrowed;
+    }
+    
+    /**
+    * Set the reference number for this book
+    * @param bookRefNumber is the reference number to be set for the book
+    */
     public void setRefNumber(String ref)
     {
         if (ref.length() >= 3)
@@ -81,40 +91,49 @@ class Book
     }
     
     /**
-     * Print the author name
-     *
-     */
+    * Increase the book's borrowed value by 1
+    */
+    public void borrow()
+    {
+        borrowed += 1;            
+    }
+    
+    /**
+    * Print the author name
+    *
+    */
     public void printAuthor()
     {
         System.out.println("Author: " + author);        
     }
 
     /**
-     * Print the book title
-     *
-     */
+    * Print the book title
+    *
+    */
     public void printTitle()
     {
         System.out.println("Title: " + title);        
     }
     
     /**
-     * Print a formatted output of the book's details
-     * If there is no refNumber, then print default of ZZZ
-     *
-     */
+    * Print a formatted output of the book's details
+    * If there is no refNumber, then print default of ZZZ
+    *
+    */
     public void printDetails()
     {
         System.out.print("Title: " + title + ", Author: "
                     + author + ", Pages: " + pages); 
         if (refNumber.length() > 0)
         {
-            System.out.println(", RefNumber: " + refNumber);
+            System.out.print(", RefNumber: " + refNumber);
         }
         else
         {
-            System.out.println(", RefNumber: ZZZ");
-        }    
+            System.out.print(", RefNumber: ZZZ");
+        } 
+        System.out.println(", Borrowed: " + borrowed);
         
     }
     
