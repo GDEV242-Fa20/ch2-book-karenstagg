@@ -93,12 +93,22 @@ class Book
     
     /**
      * Print a formatted output of the book's details
+     * If there is no refNumber, then print default of ZZZ
      *
      */
     public void printDetails()
     {
-        System.out.println("Title: " + title + ", Author: "
-                    + author + ", Pages: " + pages);     
+        System.out.print("Title: " + title + ", Author: "
+                    + author + ", Pages: " + pages); 
+        if (refNumber.length() > 0)
+        {
+            System.out.println(", RefNumber: " + refNumber);
+        }
+        else
+        {
+            System.out.println(", RefNumber: ZZZ");
+        }    
+        
     }
     
     
