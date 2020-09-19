@@ -69,6 +69,15 @@ class Book
         System.out.println("Title: " + title);        
     }
     
+    /**
+     * Print a formatted output of the book's details
+     *
+     */
+    public void printDetails()
+    {
+        System.out.println("Title: " + title + ", Author: "
+                    + author + ", Pages: " + pages);     
+    }
     
     
 }
